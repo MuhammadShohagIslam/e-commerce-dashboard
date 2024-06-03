@@ -1,8 +1,8 @@
-version: '3.6'
+version: '3.5'
 services:
   dashboard-app:
     image: muhammadshohagislam/e-commerce-dashboard:latest
     container_name: e-commerce-dashboard
     network_mode: 'host'
     env_file:
-      - env
+      - .env
