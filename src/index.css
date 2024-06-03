@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .container {
+        max-width: 1350px;
+        width: 91.66% !important;
+        margin: 0 auto;
+    }
+}
+
+/* Start Date Input */
+input[type="datetime-local"]::-webkit-datetime-edit-day-field:focus,
+input[type="datetime-local"]::-webkit-datetime-edit-month-field:focus,
+input[type="datetime-local"]::-webkit-datetime-edit-hour-field:focus,
+input[type="datetime-local"]::-webkit-datetime-edit-minute-field:focus,
+input[type="datetime-local"]::-webkit-datetime-edit-ampm-field:focus,
+input[type="datetime-local"]::-webkit-datetime-edit-year-field:focus {
+    background-color: #10b981;
+    color: white;
+    outline: none;
+}
+
+
+/* End Date Input */
+
+.hidden-checkbox{
+    display: none !important;
+}
+
+.my-checkbox > ant-checkbox-checked .ant-checkbox-inner {
+    background-color: "red";
+    border-color: "red";
+}
+/**/
+
+.ck-editor__main:focus-visible{
+    border-color: rgb(83 173 76 / 87%) !important;
+}
+.ck-content:focus-visible{
+    border-color: rgb(83 173 76 / 87%) !important;
+}
+
+.ck-placeholder:before, .ck.ck-placeholder:before {
+    font-size: 12px
+}
+
+/* Start React Select */
+.select-placeholder-text {
+    color: #d1d5db !important;
+}
+.react-select__control {
+    box-shadow: none !important;
+    border-color: white !important;
+    border-radius: 30px !important;
+}
+.react-select__placeholder {
+    color: black !important;
+}
+/* End React Select */
+
+.firebaseui-subtitle,
+.firebaseui-title {
+    color: rgb(83 173 76 / 87%) !important;
+    text-align: center !important;
+}
+.mdl-button--raised.mdl-button--colored:active {
+    background-color: rgb(0 0 0 / 10%) !important;
+    color: #000 !important;
+}
+.mdl-button--raised.mdl-button--colored:hover {
+    background-color: transparent;
+    color: #000;
+}
+.mdl-button--raised.mdl-button--colored {
+    background: #050505 !important;
+    color: hsl(0deg 0% 100% / 90%);
+}
+.react-datepicker-popper {
+    z-index: 99999 !important;
+}
+
+/* Start React Date Picker */
+.react-datepicker__day--selected:hover,
+.react-datepicker__day--in-selecting-range:hover,
+.react-datepicker__day--in-range:hover,
+.react-datepicker__month-text--selected:hover,
+.react-datepicker__month-text--in-selecting-range:hover,
+.react-datepicker__month-text--in-range:hover,
+.react-datepicker__quarter-text--selected:hover,
+.react-datepicker__quarter-text--in-selecting-range:hover,
+.react-datepicker__quarter-text--in-range:hover,
+.react-datepicker__year-text--selected:hover,
+.react-datepicker__year-text--in-selecting-range:hover,
+.react-datepicker__year-text--in-range:hover {
+    background-color: #43c24f !important;
+}
+.react-datepicker__day:hover,
+.react-datepicker__month-text:hover,
+.react-datepicker__quarter-text:hover,
+.react-datepicker__year-text:hover {
+    background-color: #43c24f !important;
+    color: #fff !important;
+}
+.react-datepicker__day--selected,
+.react-datepicker__day--in-selecting-range,
+.react-datepicker__day--in-range,
+.react-datepicker__month-text--selected,
+.react-datepicker__month-text--in-selecting-range,
+.react-datepicker__month-text--in-range,
+.react-datepicker__quarter-text--selected,
+.react-datepicker__quarter-text--in-selecting-range,
+.react-datepicker__quarter-text--in-range,
+.react-datepicker__year-text--selected,
+.react-datepicker__year-text--in-selecting-range,
+.react-datepicker__year-text--in-range {
+    background-color: #43c24f !important;
+}
+/* End React Date Picker */
+
+/*line chart */
+canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Start Small Devices */
+@media only screen and (max-width: 767px) {
+    canvas {
+        width: 100% !important;
+        height: 280px !important;
+    }
+}
+
+/* Start Scroll To Top */
+.scroll-to-top{
+    background-color: #36D399 !important;
+    transition: all .4s;
+    right: 30px !important;
+    width: 36px !important;
+    height: 40px !important;
+    bottom: 25px !important;
+}
+.scroll-to-top svg {
+    width: 19px;
+    height: 27px;
+    display: inline-block;
+    fill: white;
+    transition: all .4s;
+}
+.scroll-to-top:hover {
+    background-color: #000 !important;
+}
+
+@media only screen and (max-width: 767px) {
+    .scroll-to-top {
+        right: 10px !important;
+        bottom: 33px !important;
+        width: 33px !important;
+        height: 33px !important;
+    }
+    .scroll-to-top svg {
+        width: 12px;
+        height: 22px;
+        display: inline-block;
+        fill: #000;
+        transition: all .5s;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .scroll-to-top {
+        right: 12px !important;
+        bottom: 33px !important;
+    }
+}
+/* End Scroll To Top */
+
+/* AOS Stop Animation for Small Devices, Tablets */
+@media only screen and (max-width: 767px) {
+    .animated {
+        /*CSS transitions*/
+        -o-transition-property: none !important;
+        -moz-transition-property: none !important;
+        -ms-transition-property: none !important;
+        -webkit-transition-property: none !important;
+        transition-property: none !important;
+        /*CSS transforms*/
+        -o-transform: none !important;
+        -moz-transform: none !important;
+        -ms-transform: none !important;
+        -webkit-transform: none !important;
+        transform: none !important;
+        /*CSS animations*/
+        -webkit-animation: none !important;
+        -moz-animation: none !important;
+        -o-animation: none !important;
+        -ms-animation: none !important;
+        animation: none !important;
+    }
+}

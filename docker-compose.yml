@@ -1,0 +1,8 @@
+version: '3.8'
+services:
+  node-app:
+    image: muhammadshohagislam/e-commerce-dashboard:latest
+    container_name: e-commerce-dashboard
+    network_mode: 'host'
+    env_file:
+      - env
