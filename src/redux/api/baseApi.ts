@@ -6,7 +6,7 @@ import { getUserInfo } from "../../store/user/users";
 export const baseApi = createApi({
     reducerPath: "api",
     baseQuery: fetchBaseQuery({
-        baseUrl: config.baseURL || "http://localhost:9000/api/v1",
+        baseUrl: config.baseURL || "/api",
         prepareHeaders: (headers) => {
             const user = getUserInfo();
             if (user && user?.token?.accessToken) {
