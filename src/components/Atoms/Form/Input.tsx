@@ -8,7 +8,7 @@ import {
 } from "react-hook-form";
 
 interface InputProps<T extends FieldValues> {
-    placeholder: string;
+    placeholder?: string | undefined;
     type: string;
     register: UseFormRegister<T>;
     inputName: Path<T>;
@@ -20,7 +20,7 @@ interface InputProps<T extends FieldValues> {
 }
 
 const Input = <T extends FieldValues>({
-    placeholder,
+    placeholder = "",
     type,
     register,
     className,

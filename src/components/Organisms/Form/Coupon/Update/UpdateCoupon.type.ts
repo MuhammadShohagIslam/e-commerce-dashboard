@@ -7,7 +7,7 @@ export type TUpdateCouponForm = {
     discountAmount: number;
     isActive: boolean;
     discountType: DiscountType;
-    expiresAt: Date;
+    expiresAt: string;
 };
 
 

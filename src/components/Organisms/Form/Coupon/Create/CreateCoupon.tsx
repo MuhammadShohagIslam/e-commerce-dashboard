@@ -4,12 +4,11 @@ import toast from "react-hot-toast";
 import Button from "../../../../Atoms/Button/Button";
 import AntdModal from "../../../../Atoms/Modal/AntdModal";
 import FormInputGroup from "../../../../Molecules/Form/FormInputGroup";
+import RadioInputGroup from "../../../../Molecules/Form/RadioInputGroup";
 
 import { useCreateCouponMutation } from "../../../../../redux/services/coupon/couponApi";
 import { CustomFetchBaseQueryError } from "../../../../../types/response";
 import { TCreateCouponForm } from "./CreateCoupon.type";
-import DatePicker from "../../../../Molecules/Form/DatePicker";
-import RadioInputGroup from "../../../../Molecules/Form/RadioInputGroup";
 
 type CreateCouponFormType = {
     isModalOpen: boolean;
@@ -35,7 +34,7 @@ const CreateCoupon = ({
     } = useForm<TCreateCouponForm>({
         defaultValues: {
             code: "",
-            discountType: "Percentage"
+            discountType: "Percentage",
         },
     });
 
@@ -71,11 +70,12 @@ const CreateCoupon = ({
                 className="lg:mt-5 md:mt-0 mt-0  pt-4 pb-7 px-6"
             >
                 <div className="mb-3">
-                    <DatePicker
-                        control={control}
-                        dateName={"expiresAt"}
+                    <FormInputGroup
+                        register={register}
+                        inputName={"expiresAt"}
                         labelName={"Expires Date"}
                         errors={errors.expiresAt}
+                        inputType={"date"}
                         errorMessage={"Expires Date Is Required!"}
                         className={"drop-shadow-md"}
                     />

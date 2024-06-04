@@ -16,7 +16,7 @@ type FormGroupType<T extends FieldValues> = {
     register: UseFormRegister<T>;
     errors?: FieldError | undefined;
     inputType: string;
-    placeholder: string;
+    placeholder?: string | undefined;
     errorMessage?: string;
     isRequirePattern?: boolean;
     requirePattern?: RegisterOptions;

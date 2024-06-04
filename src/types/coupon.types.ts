@@ -7,7 +7,7 @@ export interface ICoupon {
     discountAmount: number;
     isActive: boolean;
     discountType: DiscountType;
-    expiresAt: Date;
+    expiresAt: string;
     createdAt: Date;
     updatedAt: Date;
     __v: number;
