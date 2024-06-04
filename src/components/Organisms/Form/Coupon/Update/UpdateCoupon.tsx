@@ -152,7 +152,7 @@ const UpdateCoupon = ({
                 <div className="mt-5">
                     <Button
                         className={`text-white py-3 px-4 disabled:cursor-not-allowed hover:shadow-green-500/40 bg-green-500 shadow-green-500/20`}
-                        label={isLoading ? "Loading" : "Add Coupon"}
+                        label={isLoading ? "Loading" : "Update Coupon"}
                         type="submit"
                         disabled={isLoading}
                     />

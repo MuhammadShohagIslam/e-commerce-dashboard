@@ -347,7 +347,7 @@ const CreateProductForm = ({
             <div className="mt-5">
                 <Button
                     className={`text-white py-3 px-4 disabled:cursor-not-allowed hover:shadow-green-500/40 bg-green-500 shadow-green-500/20`}
-                    label={isLoading ? "Loading" : "Add Product"}
+                    label={isLoading ? "Loading" : "Update Product"}
                     type="submit"
                     disabled={isLoading}
                 />
