@@ -10,17 +10,17 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      - name: Stop the old container
+      - name: Stop The Old Container
         run: docker stop e-commerce-dashboard || true
 
-      - name: Delete the old container
+      - name: Delete The Old Container
         run: docker rm e-commerce-dashboard || true
 
-      - name: Delete the old image
+      - name: Delete The Old Image
         run: docker rmi ${{secrets.DOCKERHUB_USERNAME}}/e-commerce-dashboard:latest || true
 
-      - name: Pull the image from dockerhub
+      - name: Pull The Image From DockerHub
         run: docker pull ${{secrets.DOCKERHUB_USERNAME}}/e-commerce-dashboard:latest
 
-      - name: Run the image
+      - name: Run The Image
         run: docker compose up -d
