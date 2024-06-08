@@ -87,7 +87,7 @@ const CategoriesPage = () => {
                     className={"lg:mt-10 mt-5 mb-7"}
                     headerTitle={"All Categories"}
                     onClick={() => handleAddCategory()}
-                    headerClassName={"text-white text-4xl font-bold mb-2"}
+                    headerClassName={"text-white md:text-4xl text-2xl font-bold mb-2"}
                     isAddButtonShow
                 />
 

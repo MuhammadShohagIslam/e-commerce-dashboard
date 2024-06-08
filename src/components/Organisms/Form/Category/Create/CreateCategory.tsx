@@ -1,17 +1,17 @@
 import { useState } from "react";
 import { UploadFile } from "antd";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 
 import AntdModal from "../../../../Atoms/Modal/AntdModal";
 import FormInputGroup from "../../../../Molecules/Form/FormInputGroup";
 import Button from "../../../../Atoms/Button/Button";
 import AntdUploadImage from "../../../../Molecules/Upload/Images/MultiImageUpload/AntdUploadImage";
+import Paragraph from "../../../../Atoms/Paragraph";
 
 import { TCreateCategoryForm } from "./createCategory.type";
 import { useCreateCategoryMutation } from "../../../../../redux/services/category/categoryApi";
-import toast from "react-hot-toast";
 import { CustomFetchBaseQueryError } from "../../../../../types/response";
-import Paragraph from "../../../../Atoms/Paragraph";
 
 type CreateCategoryFormType = {
     isModalOpen: boolean;
@@ -124,9 +124,9 @@ const CreateCategory = ({
                     ""
                 )}
 
-                <div className="mt-5">
+                <div className="md:mt-4 mt-2">
                     <Button
-                        className={`text-white py-3 px-4 disabled:cursor-not-allowed hover:shadow-green-500/40 bg-green-500 shadow-green-500/20`}
+                        className={`text-white py-3 px-4 disabled:cursor-not-allowed hover:shadow-green-500/40 bg-green-500 shadow-green-500/20 capitalize`}
                         label={isLoading ? "Loading" : "Add Category"}
                         type="submit"
                         disabled={isLoading}

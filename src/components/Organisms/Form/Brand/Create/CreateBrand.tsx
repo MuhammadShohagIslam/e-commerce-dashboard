@@ -103,7 +103,7 @@ const CreateBrand = ({ isModalOpen, setIsModalOpen }: CreateBrandFormType) => {
                         
                     />
                 </div>
-                <div className="grid grid-cols-2 gap-y-2 gap-x-5">
+                <div className="grid md:grid-cols-2 grid-cols-1 gap-y-2 gap-x-5">
                     <div>
                         <FormInputGroup
                             register={register}
@@ -178,9 +178,9 @@ const CreateBrand = ({ isModalOpen, setIsModalOpen }: CreateBrandFormType) => {
                     ""
                 )}
 
-                <div className="mt-5">
+                <div className="md:mt-4 mt-2">
                     <Button
-                        className={`text-white py-3 px-4 disabled:cursor-not-allowed hover:shadow-green-500/40 bg-green-500 shadow-green-500/20`}
+                        className={`text-white py-3 px-4 disabled:cursor-not-allowed hover:shadow-green-500/40 bg-green-500 shadow-green-500/20 capitalize`}
                         label={isLoading ? "Loading" : "Add Brand"}
                         type="submit"
                         disabled={isLoading}

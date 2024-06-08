@@ -234,7 +234,7 @@ const UpdateProduct = ({
                             title="Product Image Upload"
                         />
                     </div>
-                    <div className="grid md:gap-x-5 lg:mb-5 lg:grid-cols-2 grid-cols-1 md:grid-cols-1 mb-2 md:mb-0 gap-x-3 gap-y-2">
+                    <div className="grid md:gap-x-5 lg:mb-5 lg:grid-cols-2 grid-cols-1 mb-2 md:mb-0 gap-x-3 gap-y-2">
                         <div>
                             <FormGroup
                                 register={register}
@@ -557,10 +557,10 @@ const UpdateProduct = ({
                     ) : (
                         ""
                     )}
-                    <div className="mt-5">
+                    <div className="md:mt-5 mt-4">
                         <Button
-                            className={`text-white py-3 px-4 disabled:cursor-not-allowed hover:shadow-green-500/40 bg-green-500 shadow-green-500/20`}
-                            label={isLoading ? "Loading" : "Add Product"}
+                            className={`text-white py-3 px-4 disabled:cursor-not-allowed hover:shadow-green-500/40 bg-green-500 shadow-green-500/20 capitalize`}
+                            label={isLoading ? "Loading" : "Update Product"}
                             type="submit"
                             disabled={isLoading}
                         />

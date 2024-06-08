@@ -57,7 +57,7 @@ const ProfileEditModal: React.FC<ProfileEditModalProp> = ({
                 title={title}
             >
                 <form
-                    className="p-6 space-y-6"
+                    className="p-6 md:space-y-6 space-y-3"
                     onSubmit={handleSubmit(handleProfileEditSubmit)}
                 >
                     <div>

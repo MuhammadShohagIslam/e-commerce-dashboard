@@ -69,23 +69,24 @@ const CreateCoupon = ({
                 onSubmit={handleSubmit(handleAddCoupon)}
                 className="lg:mt-5 md:mt-0 mt-0  pt-4 pb-7 px-6"
             >
-                <div className="mb-3">
-                    <FormInputGroup
-                        register={register}
-                        inputName={"expiresAt"}
-                        labelName={"Expires Date"}
-                        errors={errors.expiresAt}
-                        inputType={"date"}
-                        errorMessage={"Expires Date Is Required!"}
-                        className={"drop-shadow-md"}
-                    />
-                </div>
-                <div className="grid grid-cols-2 gap-y-2 gap-x-5">
+                <div className="grid md:grid-cols-2 grid-cols-1 gap-y-2 gap-x-5">
+                    <div>
+                        <FormInputGroup
+                            register={register}
+                            inputName={"expiresAt"}
+                            labelName={"Expires Date"}
+                            errors={errors.expiresAt}
+                            inputType={"date"}
+                            errorMessage={"Expires Date Is Required!"}
+                            className={"drop-shadow-md"}
+                        />
+                    </div>
+
                     <div>
                         <FormInputGroup
                             register={register}
                             inputName={"code"}
-                            labelName={"Code"}
+                            labelName={"Coupon Name"}
                             errors={errors.code}
                             inputType={"text"}
                             placeholder={"Enter Your Coupon Name"}
@@ -93,6 +94,8 @@ const CreateCoupon = ({
                             className={"drop-shadow-md"}
                         />
                     </div>
+                </div>
+                <div className="grid md:grid-cols-2 grid-cols-1 gap-y-2 gap-x-5 mt-1">
                     <div>
                         <FormInputGroup
                             register={register}
@@ -105,21 +108,21 @@ const CreateCoupon = ({
                             className={"drop-shadow-md"}
                         />
                     </div>
-                    <div>
-                        <RadioInputGroup
-                            control={control}
-                            radioName={"discountType"}
-                            labelName={"Discount Type"}
-                            errors={errors.discountType}
-                            errorMessage={"Discount Type Is Required!"}
-                            radioOptions={["Percentage", "Fixed"]}
-                        />
-                    </div>
+                </div>
+                <div className="mb-8 mt-1">
+                    <RadioInputGroup
+                        control={control}
+                        radioName={"discountType"}
+                        labelName={"Discount Type"}
+                        errors={errors.discountType}
+                        errorMessage={"Discount Type Is Required!"}
+                        radioOptions={["Percentage", "Fixed"]}
+                    />
                 </div>
 
-                <div className="mt-5">
+                <div className="md:mt-4 mt-2">
                     <Button
-                        className={`text-white py-3 px-4 disabled:cursor-not-allowed hover:shadow-green-500/40 bg-green-500 shadow-green-500/20`}
+                        className={`text-white py-3 px-4 disabled:cursor-not-allowed hover:shadow-green-500/40 bg-green-500 shadow-green-500/20 capitalize`}
                         label={isLoading ? "Loading" : "Add Coupon"}
                         type="submit"
                         disabled={isLoading}

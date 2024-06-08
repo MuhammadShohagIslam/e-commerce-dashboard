@@ -10,7 +10,7 @@ const Heading: React.FC<HeadingProps> = ({ className, title }) => {
     return (
         <h2
             className={cn(
-                "text-white text-4xl font-bold mb-2",
+                "text-white md:text-4xl text-xl font-bold mb-2",
                 className || ""
             )}
         >

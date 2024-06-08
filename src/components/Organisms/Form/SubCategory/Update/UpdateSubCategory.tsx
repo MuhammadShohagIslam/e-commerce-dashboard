@@ -8,12 +8,14 @@ import AntdModal from "../../../../Atoms/Modal/AntdModal";
 import FormInputGroup from "../../../../Molecules/Form/FormInputGroup";
 import Button from "../../../../Atoms/Button/Button";
 import AntdUploadImage from "../../../../Molecules/Upload/Images/MultiImageUpload/AntdUploadImage";
+import FormSelectGroup from "../../../../Molecules/Form/FormSelectGroup";
 
 import { TUpdateSubCategoryForm } from "./UpdateSubCategory.type";
 import { useUpdateSubCategoryMutation } from "../../../../../redux/services/subCategory/subCategoryApi";
 import { CustomFetchBaseQueryError } from "../../../../../types/response";
 import { ArrayDataModifyHelpers } from "../../../../../utils/arrayDataModify";
 import { ISubCategory } from "../../../../../types/sub-category.type";
+import { useGetCategoriesQuery } from "../../../../../redux/services/category/categoryApi";
 
 type UpdateSubCategoryFormType = {
     isModalOpen: boolean;
@@ -37,13 +39,16 @@ const UpdateSubCategory = ({
 
     // redux api call
     const [updateSubCategory, { isLoading }] = useUpdateSubCategoryMutation();
+    const { data: categoryData } = useGetCategoriesQuery("");
 
     // react hook form
     const {
         handleSubmit,
         register,
+        control,
         formState: { errors },
         reset,
+        getValues,
     } = useForm<TUpdateSubCategoryForm>({
         defaultValues: {
             name: "",
@@ -59,11 +64,18 @@ const UpdateSubCategory = ({
             return;
         }
 
+        const selectData = {
+            category: data.category
+                ? JSON.parse(data.category).categoryId
+                : updateData?.categoryId?._id,
+        };
+
         // Create a new FormData object
         const formData = new FormData();
 
         // Append form fields to the FormData object
         formData.append("name", data.name);
+        formData.append("categoryId", selectData.category);
 
         // Append each image file individually to the FormData object
         imageFiles.forEach((file) => {
@@ -92,7 +104,8 @@ const UpdateSubCategory = ({
             if ("error" in result && result.error) {
                 const customError = result.error as CustomFetchBaseQueryError;
                 const errorMessage =
-                    customError.data?.message || "Failed to Create Sub Category!";
+                    customError.data?.message ||
+                    "Failed to Create Sub Category!";
                 setErrorMessage(errorMessage);
             } else {
                 setErrorMessage("Internal Server Error!");
@@ -107,9 +120,9 @@ const UpdateSubCategory = ({
                 name: updateData?.name,
             });
             setImageFiles(
-                ArrayDataModifyHelpers.imageStringArrayToObjectModify(
-                    [updateData?.imageURL]
-                )
+                ArrayDataModifyHelpers.imageStringArrayToObjectModify([
+                    updateData?.imageURL,
+                ])
             );
         }
     }, [updateData, reset]);
@@ -155,6 +168,51 @@ const UpdateSubCategory = ({
                     </div>
                 </div>
 
+                <div className="grid grid-cols-1">
+                    <div>
+                        <FormSelectGroup
+                            options={ArrayDataModifyHelpers.arrayDataToOptions(
+                                categoryData?.data,
+                                "name",
+                                {
+                                    id: "categoryId",
+                                    name: "name",
+                                },
+                                {
+                                    id: "_id",
+                                    name: "name",
+                                }
+                            )}
+                            defaultValue={ArrayDataModifyHelpers.arrayDataToOptions(
+                                [
+                                    {
+                                        ...updateData?.categoryId,
+                                    },
+                                ],
+                                "name",
+                                {
+                                    id: "categoryId",
+                                    name: "name",
+                                },
+                                {
+                                    id: "categoryId",
+                                    name: "name",
+                                }
+                            )}
+                            placeholder={"Select Product Category"}
+                            labelName={"Category"}
+                            selectName={"category"}
+                            control={control}
+                            errors={errors.category}
+                            errorMessage={
+                                getValues("category") === undefined
+                                    ? ""
+                                    : "Product Category Is Required!"
+                            }
+                        />
+                    </div>
+                </div>
+
                 {errorMessage ? (
                     <div>
                         <Paragraph
@@ -168,10 +226,10 @@ const UpdateSubCategory = ({
                     ""
                 )}
 
-                <div className="mt-5">
+                <div className="md:mt-4 mt-2">
                     <Button
-                        className={`text-white py-3 px-4 disabled:cursor-not-allowed hover:shadow-green-500/40 bg-green-500 shadow-green-500/20`}
-                        label={isLoading ? "Loading" : "Update"}
+                        className={`text-white py-3 px-4 disabled:cursor-not-allowed hover:shadow-green-500/40 capitalize bg-green-500 shadow-green-500/20`}
+                        label={isLoading ? "Loading" : "Update Sub Category"}
                         type="submit"
                         disabled={isLoading}
                     />

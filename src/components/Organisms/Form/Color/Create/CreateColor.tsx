@@ -93,9 +93,9 @@ const CreateColor = ({ isModalOpen, setIsModalOpen }: CreateColorFormType) => {
                     ""
                 )}
 
-                <div className="mt-5">
+                <div className="md:mt-4 mt-2">
                     <Button
-                        className={`text-white py-3 px-4 disabled:cursor-not-allowed hover:shadow-green-500/40 bg-green-500 shadow-green-500/20`}
+                        className={`text-white py-3 px-4 disabled:cursor-not-allowed hover:shadow-green-500/40 bg-green-500 shadow-green-500/20 capitalize`}
                         label={isLoading ? "Loading" : "Add Color"}
                         type="submit"
                         disabled={isLoading}

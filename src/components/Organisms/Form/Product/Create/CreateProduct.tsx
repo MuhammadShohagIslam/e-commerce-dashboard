@@ -344,10 +344,10 @@ const CreateProductForm = ({
             ) : (
                 ""
             )}
-            <div className="mt-5">
+            <div className="md:mt-5 mt-4">
                 <Button
-                    className={`text-white py-3 px-4 disabled:cursor-not-allowed hover:shadow-green-500/40 bg-green-500 shadow-green-500/20`}
-                    label={isLoading ? "Loading" : "Update Product"}
+                    className={`text-white py-3 px-4 disabled:cursor-not-allowed hover:shadow-green-500/40 bg-green-500 shadow-green-500/20 capitalize`}
+                    label={isLoading ? "Loading" : "Add Product"}
                     type="submit"
                     disabled={isLoading}
                 />

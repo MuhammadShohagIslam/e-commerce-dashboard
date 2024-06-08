@@ -139,7 +139,7 @@ const ShippingAddressForm: React.FC<ShippingAddressFormProps> = ({
 
             <button
                 type="submit"
-                className="border-2 px-5 py-2 border-black hover:bg-primary font-semibold hover:text-white rounded-md transition-all duration-500 w-full disabled:opacity-75 disabled:border-2 disabled:border-primary mt-2"
+                className="border-2 px-5 py-2 border-black hover:bg-primary font-semibold hover:text-white rounded-md transition-all duration-500 w-full disabled:opacity-75 disabled:border-2 disabled:border-primary mt-2 capitalize"
                 disabled={loading}
             >
                 {loading ? "Saving..." : "Save"}

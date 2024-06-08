@@ -10,6 +10,7 @@ import RadioInputGroup from "../../../../Molecules/Form/RadioInputGroup";
 import { TUpdateCouponForm } from "./UpdateCoupon.type";
 import { useUpdateCouponMutation } from "../../../../../redux/services/coupon/couponApi";
 import { ICoupon } from "../../../../../types/coupon.types";
+import { CustomFetchBaseQueryError } from "../../../../../types/response";
 
 
 type UpdateCouponFormType = {
@@ -64,8 +65,12 @@ const UpdateCoupon = ({
             toast.success(result.data.message);
         } else {
             if ("error" in result && result.error) {
-                toast.success("Failed to Create Coupon!");
+                const customError = result.error as CustomFetchBaseQueryError;
+                const errorMessage =
+                    customError.data?.message || "Failed to create Coupon";
+                toast.error(errorMessage);
             }
+           
         }
     };
 
@@ -85,7 +90,7 @@ const UpdateCoupon = ({
 
     return (
         <AntdModal
-            title="Add New Coupon"
+            title="Update Coupon"
             isModalOpen={isModalOpen}
             modalWidth={890}
             isCentered
@@ -112,7 +117,7 @@ const UpdateCoupon = ({
                         className={"drop-shadow-md"}
                     />
                 </div>
-                <div className="grid grid-cols-2 gap-y-2 gap-x-5">
+                <div className="grid md:grid-cols-2 grid-cols-1 gap-y-2 gap-x-5">
                     <div>
                         <FormInputGroup
                             register={register}
@@ -149,9 +154,9 @@ const UpdateCoupon = ({
                     </div>
                 </div>
 
-                <div className="mt-5">
+                <div className="md:mt-4 mt-2">
                     <Button
-                        className={`text-white py-3 px-4 disabled:cursor-not-allowed hover:shadow-green-500/40 bg-green-500 shadow-green-500/20`}
+                        className={`text-white py-3 px-4 disabled:cursor-not-allowed hover:shadow-green-500/40 bg-green-500 shadow-green-500/20 capitalize`}
                         label={isLoading ? "Loading" : "Update Coupon"}
                         type="submit"
                         disabled={isLoading}
