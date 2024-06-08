@@ -11,6 +11,7 @@ import TableHeader from "../../../components/Molecules/Table/TableHeader";
 import CreateSubCategory from "../../../components/Organisms/Form/SubCategory/Create/CreateSubCategory";
 import UpdateSubCategory from "../../../components/Organisms/Form/SubCategory/Update/UpdateSubCategory";
 import DeleteModal from "../../../components/Organisms/Modal/Delete/DeleteModal";
+import MetaTag from "../../../utils/MetaTag";
 
 import {
     useGetSubCategoriesQuery,
@@ -79,6 +80,11 @@ const SubCategoryPage = () => {
 
     return (
         <>
+            <MetaTag
+                title="Sub-Categories"
+                description="Manage subcategories on Aladin. Create, edit, delete, and organize subcategory options to enhance product categorization and organization in your store."
+            />
+
             <div>
                 <TableHeader
                     buttonName="Add Sub Category"
@@ -88,7 +94,9 @@ const SubCategoryPage = () => {
                     className={"lg:mt-10 mt-5 mb-7"}
                     headerTitle={"All SubCategory"}
                     onClick={() => handleAddSubCategory()}
-                    headerClassName={"text-white md:text-4xl text-[22px] font-bold mb-2"}
+                    headerClassName={
+                        "text-white md:text-4xl text-[22px] font-bold mb-2"
+                    }
                     isAddButtonShow
                 />
 

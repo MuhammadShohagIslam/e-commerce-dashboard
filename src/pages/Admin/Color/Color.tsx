@@ -10,6 +10,7 @@ import TableHeader from "../../../components/Molecules/Table/TableHeader";
 import CreateColor from "../../../components/Organisms/Form/Color/Create/CreateColor";
 import DeleteModal from "../../../components/Organisms/Modal/Delete/DeleteModal";
 import UpdateColor from "../../../components/Organisms/Form/Color/Update/UpdateColor";
+import MetaTag from "../../../utils/MetaTag";
 
 import {
     useGetColorsQuery,
@@ -77,6 +78,11 @@ const ColorPage = () => {
 
     return (
         <>
+            <MetaTag
+                title="Colors"
+                description="Manage product colors on Aladin. Create, edit, delete, and organize color options to enhance product variation and presentation in your store."
+            />
+
             <div>
                 <TableHeader
                     buttonName="Add Color"

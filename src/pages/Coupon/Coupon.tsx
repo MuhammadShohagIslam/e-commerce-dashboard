@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 import { useState } from "react";
 import { FaEdit, FaTrash } from "react-icons/fa";
-import localizedFormat from 'dayjs/plugin/localizedFormat'
+import localizedFormat from "dayjs/plugin/localizedFormat";
 
 import Button from "../../components/Atoms/Button/Button";
 import Table from "../../components/Molecules/Table/Table";
@@ -12,7 +12,7 @@ import TableHeader from "../../components/Molecules/Table/TableHeader";
 import CreateCoupon from "../../components/Organisms/Form/Coupon/Create/CreateCoupon";
 import UpdateCoupon from "../../components/Organisms/Form/Coupon/Update/UpdateCoupon";
 import DeleteModal from "../../components/Organisms/Modal/Delete/DeleteModal";
-
+import MetaTag from "../../utils/MetaTag";
 
 import {
     useGetCouponsQuery,
@@ -78,10 +78,15 @@ const CouponPage = () => {
         setIsModalOpen((prev) => !prev);
     };
 
-    dayjs.extend(localizedFormat)
+    dayjs.extend(localizedFormat);
 
     return (
         <>
+            <MetaTag
+                title="Coupons"
+                description="Manage your discount coupons on Aladin. Create, edit, delete and organize your promotional offers to enhance customer engagement and sales."
+            />
+
             <div>
                 <TableHeader
                     buttonName="Add Coupon"
@@ -91,7 +96,9 @@ const CouponPage = () => {
                     className={"lg:mt-10 mt-5 mb-7"}
                     headerTitle={"All Coupon"}
                     onClick={() => handleAddCoupon()}
-                    headerClassName={"text-white md:text-4xl text-2xl  font-bold mb-2"}
+                    headerClassName={
+                        "text-white md:text-4xl text-2xl  font-bold mb-2"
+                    }
                     isAddButtonShow
                 />
 
@@ -130,19 +137,15 @@ const CouponPage = () => {
                                 dataIndex: "expiresAt",
                                 render: ({ item }) => (
                                     <span>
-                                        {dayjs(item.expiresAt).format('llll')}
+                                        {dayjs(item.expiresAt).format("llll")}
                                     </span>
                                 ),
                             },
-                           
+
                             {
                                 name: "Uses",
                                 dataIndex: "uses",
-                                render: ({ item }) => (
-                                    <span>
-                                        {item.uses}
-                                    </span>
-                                ),
+                                render: ({ item }) => <span>{item.uses}</span>,
                             },
                             {
                                 name: "Actions",

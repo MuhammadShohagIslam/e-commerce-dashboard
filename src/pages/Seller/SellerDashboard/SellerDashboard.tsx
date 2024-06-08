@@ -3,12 +3,12 @@ import { GiTakeMyMoney } from "react-icons/gi";
 import { MdOutlineProductionQuantityLimits } from "react-icons/md";
 import { SlHandbag } from "react-icons/sl";
 
-
 import RecentOrder from "../../../components/Organisms/Dashboard/RecentOrder/RecentOrders";
 import RecentProduct from "../../../components/Organisms/Dashboard/RecentProduct/RecentProducts";
 import LineChart from "../../../components/Molecules/Dashboard/LineChart/LineChart";
 import RecentUsers from "../../../components/Organisms/Dashboard/RecentUsers/RecentUsers";
 import DashWidget from "../../../components/Molecules/Dashboard/DashWidget/DashWidget";
+import MetaTag from "../../../utils/MetaTag";
 
 import { useGetDashWidgetInfosQuery } from "../../../redux/services/dashboard/dashboardApi";
 import { convertToKFormat } from "../../../utils/convertToKFormat";
@@ -21,6 +21,10 @@ const SellerDashboard = () => {
 
     return (
         <>
+            <MetaTag
+                title="Dashboard"
+                description="Manage and oversee your Aladin platform with the comprehensive seller dashboard. Access user data, handle orders, and monitor system performance."
+            />
             <div>
                 {/* Dash Widget Card */}
                 <section>

@@ -10,6 +10,7 @@ import TableHeader from "../../../components/Molecules/Table/TableHeader";
 import CreateSize from "../../../components/Organisms/Form/Size/Create/CreateSize";
 import DeleteModal from "../../../components/Organisms/Modal/Delete/DeleteModal";
 import UpdateSize from "../../../components/Organisms/Form/Size/Update/UpdateSize";
+import MetaTag from "../../../utils/MetaTag";
 
 import {
     useGetSizesQuery,
@@ -77,6 +78,11 @@ const SizePage = () => {
 
     return (
         <>
+            <MetaTag
+                title="Sizes"
+                description="Manage product sizes on Aladin. Create, edit, delete, and organize size options to enhance product variation and presentation in your store."
+            />
+
             <div>
                 <TableHeader
                     buttonName="Add Size"

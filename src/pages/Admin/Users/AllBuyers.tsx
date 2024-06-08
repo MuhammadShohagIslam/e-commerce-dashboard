@@ -10,6 +10,7 @@ import DeleteModal from "../../../components/Organisms/Modal/Delete/DeleteModal"
 import ShippingAddressModal from "../../../components/Organisms/Modal/Order/ShippingAddressModal";
 import TableFilter from "../../../components/Organisms/Table/TableFilter/TableFilter";
 import useDebounce from "../../../hooks/useDebounce";
+import MetaTag from "../../../utils/MetaTag";
 
 import {
     useDeleteUserMutation,
@@ -75,6 +76,11 @@ const AllBuyers = () => {
 
     return (
         <>
+            <MetaTag
+                title="All Buyers"
+                description="Manage buyers on Aladin. View, edit, and organize buyer information to enhance customer relationships and provide personalized service."
+            />
+
             <div>
                 <TableHeader
                     buttonName=""

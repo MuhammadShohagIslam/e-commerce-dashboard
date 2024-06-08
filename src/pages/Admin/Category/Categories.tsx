@@ -10,13 +10,14 @@ import TableHeader from "../../../components/Molecules/Table/TableHeader";
 import CreateCategory from "../../../components/Organisms/Form/Category/Create/CreateCategory";
 import DeleteModal from "../../../components/Organisms/Modal/Delete/DeleteModal";
 import UpdateCategory from "../../../components/Organisms/Form/Category/Update/UpdateCategory";
+import MetaTag from "../../../utils/MetaTag";
+import AntdImage from "../../../components/Molecules/Image/Image";
 
 import {
     useGetCategoriesQuery,
     useRemovedCategoryMutation,
 } from "../../../redux/services/category/categoryApi";
 import { ICategory } from "../../../types/category.type";
-import AntdImage from "../../../components/Molecules/Image/Image";
 
 const CategoriesPage = () => {
     // state
@@ -78,6 +79,11 @@ const CategoriesPage = () => {
 
     return (
         <>
+            <MetaTag
+                title="Categories"
+                description="Manage your product categories on Aladin. Create, edit, delete, and organize your category listings to enhance navigation and product organization in your store."
+            />
+
             <div>
                 <TableHeader
                     buttonName="Add Category"
@@ -87,7 +93,9 @@ const CategoriesPage = () => {
                     className={"lg:mt-10 mt-5 mb-7"}
                     headerTitle={"All Categories"}
                     onClick={() => handleAddCategory()}
-                    headerClassName={"text-white md:text-4xl text-2xl font-bold mb-2"}
+                    headerClassName={
+                        "text-white md:text-4xl text-2xl font-bold mb-2"
+                    }
                     isAddButtonShow
                 />
 

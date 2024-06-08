@@ -11,6 +11,7 @@ import CreateBrand from "../../../components/Organisms/Form/Brand/Create/CreateB
 import UpdateBrand from "../../../components/Organisms/Form/Brand/Update/UpdateBrand";
 import DeleteModal from "../../../components/Organisms/Modal/Delete/DeleteModal";
 import AntdImage from "../../../components/Molecules/Image/Image";
+import MetaTag from "../../../utils/MetaTag";
 
 import {
     useGetBrandsQuery,
@@ -79,6 +80,10 @@ const BrandPage = () => {
 
     return (
         <>
+            <MetaTag
+                title="Brands"
+                description="Manage your brands on Aladin. Create, edit, delete, and organize your brand listings to enhance your store's identity and product offerings."
+            />
             <div>
                 <TableHeader
                     buttonName="Add Brand"
@@ -152,9 +157,7 @@ const BrandPage = () => {
                                 name: "Website",
                                 dataIndex: "website",
                                 render: ({ item }) => (
-                                    <h2 className="truncate">
-                                        {item.website}
-                                    </h2>
+                                    <h2 className="truncate">{item.website}</h2>
                                 ),
                             },
                             {

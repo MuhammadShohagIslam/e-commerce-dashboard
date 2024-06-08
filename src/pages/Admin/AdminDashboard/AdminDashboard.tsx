@@ -3,6 +3,7 @@ import { GiTakeMyMoney } from "react-icons/gi";
 import { MdOutlineProductionQuantityLimits } from "react-icons/md";
 import { SlHandbag } from "react-icons/sl";
 
+import MetaTag from "../../../utils/MetaTag";
 import DashWidget from "../../../components/Molecules/Dashboard/DashWidget/DashWidget";
 import RecentOrder from "../../../components/Organisms/Dashboard/RecentOrder/RecentOrders";
 import RecentProduct from "../../../components/Organisms/Dashboard/RecentProduct/RecentProducts";
@@ -20,6 +21,10 @@ const AdminDashboard = () => {
 
     return (
         <>
+            <MetaTag
+                title="Dashboard"
+                description="Manage and oversee your Aladin platform with the comprehensive admin dashboard. Access user data, handle orders, and monitor system performance."
+            />
             <div>
                 {/* Dash Widget Card */}
                 <section>

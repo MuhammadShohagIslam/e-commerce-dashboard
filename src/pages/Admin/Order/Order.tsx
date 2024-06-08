@@ -14,6 +14,7 @@ import ShippingAddressModal from "../../../components/Organisms/Modal/Order/Ship
 import useDebounce from "../../../hooks/useDebounce";
 import DeleteModal from "../../../components/Organisms/Modal/Delete/DeleteModal";
 import ProductDetailModal from "../../../components/Organisms/Modal/Order/ProductDetailModal";
+import MetaTag from "../../../utils/MetaTag";
 
 import {
     useGetOrdersQuery,
@@ -146,6 +147,11 @@ const AllOrders = () => {
 
     return (
         <>
+            <MetaTag
+                title="Orders"
+                description="View and manage orders on Aladin. Monitor order status, process payments, and ensure timely delivery to provide excellent customer service."
+            />
+
             <div>
                 <TableHeader
                     buttonName=""

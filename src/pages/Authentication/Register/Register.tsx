@@ -6,6 +6,7 @@ import AuthFormFooter from "../../../components/Molecules/Auth/AuthFormFooter";
 import LeftAuth from "../../../components/Molecules/Auth/LeftAuth";
 import RegisterForm from "../../../components/Organisms/Form/Auth/RegisterForm";
 import OTPSendForm from "../../../components/Organisms/Form/Auth/OTPSendForm";
+import MetaTag from "../../../utils/MetaTag";
 
 import { useRegisterMutation } from "../../../redux/services/auth/authApiService";
 import { getUserInfo, storeUserInfo } from "../../../store/user/users";
@@ -87,35 +88,42 @@ const Register = () => {
     };
 
     return (
-        <div className="bg-white">
-            <div className="container !w-[69%]">
-                <div className="grid lg:grid-cols-2 grid-cols-1 place-items-center">
-                    <LeftAuth />
-                    <div className="mx-auto w-full max-w-[450px] my-8 py-6 px-7 bg-white/80 shadow-lg rounded-md">
-                        <RegisterForm
-                            handleRegister={handleRegister}
-                            isLoading={sendOtpLoading}
-                        />
-                        <AuthFormFooter
-                            href={"/login"}
-                            content={[
-                                "Already have an account?",
-                                "Login Your Account",
-                            ]}
-                        />
+        <>
+            <MetaTag
+                title="Register"
+                description="Create an account on Aladin. Sign up to access exclusive deals, manage orders, and enjoy personalized features for a seamless shopping experience."
+            />
+
+            <div className="bg-white">
+                <div className="container !w-[69%]">
+                    <div className="grid lg:grid-cols-2 grid-cols-1 place-items-center">
+                        <LeftAuth />
+                        <div className="mx-auto w-full max-w-[450px] my-8 py-6 px-7 bg-white/80 shadow-lg rounded-md">
+                            <RegisterForm
+                                handleRegister={handleRegister}
+                                isLoading={sendOtpLoading}
+                            />
+                            <AuthFormFooter
+                                href={"/login"}
+                                content={[
+                                    "Already have an account?",
+                                    "Login Your Account",
+                                ]}
+                            />
+                        </div>
                     </div>
                 </div>
+                {openOTPModal && (
+                    <OTPSendForm
+                        isModalOpen={openOTPModal}
+                        setIsModalOpen={setOpenOTPModal}
+                        handleOtpSend={handleOtpSend}
+                        isLoading={isLoading}
+                        otpBtnName={"Confirm Register"}
+                    />
+                )}
             </div>
-            {openOTPModal && (
-                <OTPSendForm
-                    isModalOpen={openOTPModal}
-                    setIsModalOpen={setOpenOTPModal}
-                    handleOtpSend={handleOtpSend}
-                    isLoading={isLoading}
-                    otpBtnName={"Confirm Register"}
-                />
-            )}
-        </div>
+        </>
     );
 };
 

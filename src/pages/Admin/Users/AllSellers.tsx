@@ -10,6 +10,7 @@ import DeleteModal from "../../../components/Organisms/Modal/Delete/DeleteModal"
 import ShippingAddressModal from "../../../components/Organisms/Modal/Order/ShippingAddressModal";
 import TableFilter from "../../../components/Organisms/Table/TableFilter/TableFilter";
 import useDebounce from "../../../hooks/useDebounce";
+import MetaTag from "../../../utils/MetaTag";
 
 import { IShippingAddress } from "../../../types/user.type";
 import {
@@ -75,6 +76,10 @@ const AllSellers = () => {
 
     return (
         <>
+            <MetaTag
+                title="All Sellers"
+                description="Manage sellers on Aladin. View, edit, and organize buyer information to enhance customer relationships and provide personalized service."
+            />
             <div>
                 <TableHeader
                     buttonName=""

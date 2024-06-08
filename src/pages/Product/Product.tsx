@@ -10,6 +10,7 @@ import TableHeader from "../../components/Molecules/Table/TableHeader";
 import useDebounce from "../../hooks/useDebounce";
 import DeleteModal from "../../components/Organisms/Modal/Delete/DeleteModal";
 import UpdateProduct from "../../components/Organisms/Form/Product/Update/UpdateProduct";
+import MetaTag from "../../utils/MetaTag";
 
 import {
     useGetProductsQuery,
@@ -71,6 +72,11 @@ const ProductPage = () => {
 
     return (
         <>
+            <MetaTag
+                title="Products"
+                description="Manage your product listings on Aladin. Add, edit, and organize your products to keep your store's inventory up to date."
+            />
+
             <div>
                 <TableHeader
                     buttonName="Add Product"
@@ -80,7 +86,9 @@ const ProductPage = () => {
                     className={"lg:mt-10 mt-5 mb-7"}
                     headerTitle={"All Products"}
                     onClick={() => navigate("/products/add-product")}
-                    headerClassName={"text-white md:text-4xl text-3xl font-bold mb-2"}
+                    headerClassName={
+                        "text-white md:text-4xl text-3xl font-bold mb-2"
+                    }
                     isAddButtonShow
                 />
 
@@ -203,7 +211,9 @@ const ProductPage = () => {
                                         <Button
                                             className={`text-white hover:shadow-blue-500/40 bg-blue-500 shadow-blue-500/20`}
                                             label={<FaEdit />}
-                                            onClick={() => handleEditProduct(item.slug)}
+                                            onClick={() =>
+                                                handleEditProduct(item.slug)
+                                            }
                                         />
                                         <Button
                                             className={`text-white hover:shadow-red-500/40 bg-red-500 shadow-red-500/20`}

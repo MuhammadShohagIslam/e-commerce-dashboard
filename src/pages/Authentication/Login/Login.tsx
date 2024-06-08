@@ -6,6 +6,7 @@ import AuthFormFooter from "../../../components/Molecules/Auth/AuthFormFooter";
 import LeftAuth from "../../../components/Molecules/Auth/LeftAuth";
 import OTPSendForgotPassForm from "../../../components/Organisms/Form/Auth/ForgotPasswordForm/OTPSendForgotPassForm";
 import LoginForm from "../../../components/Organisms/Form/Auth/LoginForm";
+import MetaTag from "../../../utils/MetaTag";
 
 import { useLoginMutation } from "../../../redux/services/auth/authApiService";
 import { storeUserInfo } from "../../../store/user/users";
@@ -37,36 +38,43 @@ const Login = () => {
     };
 
     return (
-        <div className="h-screen flex justify-center items-center">
-            <div className="container !w-[69%]">
-                <div className="grid lg:grid-cols-2 grid-cols-1 place-items-center">
-                    <LeftAuth />
-                    <div className="mx-auto w-full max-w-[450px] my-8 py-6 px-7 bg-white/80 shadow-lg rounded-md">
-                        <LoginForm
-                            handleLogin={handleLogin}
-                            setOpenForgotPasswordModal={
-                                setOpenForgotPasswordModal
-                            }
-                            isLoading={isLoading}
-                        />
-                        <AuthFormFooter
-                            href={"/register"}
-                            content={[
-                                "Don't have an account?",
-                                "Create Your Account",
-                            ]}
-                        />
+        <>
+            <MetaTag
+                title="Login"
+                description="Sign in to your Aladin account. Access your profile, manage orders, and explore personalized features for a seamless shopping experience."
+            />
+
+            <div className="h-screen flex justify-center items-center">
+                <div className="container !w-[69%]">
+                    <div className="grid lg:grid-cols-2 grid-cols-1 place-items-center">
+                        <LeftAuth />
+                        <div className="mx-auto w-full max-w-[450px] my-8 py-6 px-7 bg-white/80 shadow-lg rounded-md">
+                            <LoginForm
+                                handleLogin={handleLogin}
+                                setOpenForgotPasswordModal={
+                                    setOpenForgotPasswordModal
+                                }
+                                isLoading={isLoading}
+                            />
+                            <AuthFormFooter
+                                href={"/register"}
+                                content={[
+                                    "Don't have an account?",
+                                    "Create Your Account",
+                                ]}
+                            />
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            {openForgotPasswordModal && (
-                <OTPSendForgotPassForm
-                    isModalOpen={openForgotPasswordModal}
-                    setIsModalOpen={setOpenForgotPasswordModal}
-                />
-            )}
-        </div>
+                {openForgotPasswordModal && (
+                    <OTPSendForgotPassForm
+                        isModalOpen={openForgotPasswordModal}
+                        setIsModalOpen={setOpenForgotPasswordModal}
+                    />
+                )}
+            </div>
+        </>
     );
 };
 

@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 
 import UpdatePasswordForm from "../../components/Organisms/Form/Auth/UpdatePasswordForm";
 import ProfileEditModal from "../../components/Molecules/Modal/ProfileEditModal/ProfileEditModal";
+import MetaTag from "../../utils/MetaTag";
 
 import {
     getUserInfo,
@@ -59,6 +60,11 @@ const ProfilePage = () => {
 
     return (
         <>
+            <MetaTag
+                title="Profile"
+                description="View and manage your profile on Aladin. Update personal information, review activity, and customize your settings."
+            />
+
             <div>
                 <div className="bg-secondary md:px-9 px-3 md:pt-10 pt-6  md:pb-9 pb-5 rounded-lg">
                     <h2 className="text-center font-semibold text-primary text-2xl">

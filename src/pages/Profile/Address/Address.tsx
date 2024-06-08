@@ -14,6 +14,7 @@ import {
 } from "../../../store/user/users";
 import { IAddressFormValue } from "../../../types/auth.type";
 import { CustomFetchBaseQueryError } from "../../../types/response";
+import MetaTag from "../../../utils/MetaTag";
 
 const AddressPage = () => {
     const [showModal, setShowModal] = useState<boolean>(false);
@@ -66,6 +67,10 @@ const AddressPage = () => {
     };
     return (
         <>
+            <MetaTag
+                title="Address"
+                description="Manage your shipping address on Aladin. Edit, update, and save your address details for seamless deliveries."
+            />
             <div>
                 <div className="bg-secondary px-9 pt-10  pb-9 rounded-lg">
                     <h2 className="text-start font-semibold text-primary text-2xl">
