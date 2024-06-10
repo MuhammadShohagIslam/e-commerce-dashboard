@@ -49,7 +49,7 @@
 -   ### Dashboard Update Product Page
 
 <div align="center">
-    <img width="800" src="https://github.com/MuhammadShohagIslam/e-commerce-dashboard/blob/main/preview/update-product.png">
+    <img width="800" src="https://github.com/MuhammadShohagIslam/e-commerce-dashboard/blob/main/preview/update-product.JPG">
 </div>  
 <p>On the Update Product Page, We can update or edit specific product if we want to edit product</p>
 
@@ -60,20 +60,6 @@
 </div> 
 <p>On the My Categories Page, We can see all of our categories where we need to creating time product</p>
 
--   ### Categories Update Page
-
-<div align="center">
-    <img width="600" src="https://github.com/MuhammadShohagIslam/e-commerce-dashboard/blob/main/preview/updateCategory.png">
-</div> 
-<p>On the Categories Update Page, We can update existing category</p>
-
-
--   ### User Profile
-
-<div align="center">
-    <img width="600" src="https://github.com/MuhammadShohagIslam/e-commerce-dashboard/blob/main/preview/profile.JPG">
-</div>  
-<p>On the User Profile Page, a user can see profile information image, and user can update password</p>
 
 -   ### User Update Address
 
@@ -86,13 +72,13 @@
 <div align="center">
     <img width="450" src="https://github.com/MuhammadShohagIslam/e-commerce-dashboard/blob/main/preview/register.JPG">
 </div> 
-<p>On the Register page, registration process two way, firstly, user put email, then it check verify the email then full registration process done or user can register with google </p>
+<p>On the Register page, Admin/Seller can register new account</p>
 
 -   ### Login Page
 <div align="center">
     <img width="450" src="https://github.com/MuhammadShohagIslam/e-commerce-dashboard/blob/main/preview/login.JPG">
 </div> 
-<p>On the Login page, user can login with google, email and password.Implemented error functionality with toast message</p>
+<p>On the Login page, Admin/Seller can register new account</p>
 
 
 # Let's See Which Technology use of our project
@@ -105,8 +91,8 @@
 - React-Icons
 - React-Countup
 - React-Helmet
-- Reduxjs/Toolkit
-- @Ckeditor/Ckeditor5-React
+- Reduxjs-Toolkit
+- Ckeditor5-React
 - Clsx
 - React-hot-toast
 - React-Router-Dom
