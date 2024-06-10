@@ -37,9 +37,16 @@ const UpdateSubCategory = ({
     const [imageFiles, setImageFiles] = useState<UploadFile[]>([]);
     const [errorMessage, setErrorMessage] = useState<string>("");
 
+    // search query parameter
+    const queryParams = new URLSearchParams({
+        limit: JSON.stringify(0),
+    });
+
     // redux api call
     const [updateSubCategory, { isLoading }] = useUpdateSubCategoryMutation();
-    const { data: categoryData } = useGetCategoriesQuery("");
+    const { data: categoryData } = useGetCategoriesQuery(
+        queryParams.toString()
+    );
 
     // react hook form
     const {

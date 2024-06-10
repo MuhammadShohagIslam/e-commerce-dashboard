@@ -8,11 +8,18 @@ import { useGetSizesQuery } from "../../redux/services/size/sizeApi";
 import { useGetSubCategoriesQuery } from "../../redux/services/subCategory/subCategoryApi";
 
 const UpdateProductPage = () => {
-    const { data: categoryData } = useGetCategoriesQuery("");
-    const { data: subCategoryData } = useGetSubCategoriesQuery("");
-    const { data: brandData } = useGetBrandsQuery("");
-    const { data: colorData } = useGetColorsQuery("");
-    const { data: sizeData } = useGetSizesQuery("");
+    const queryParams = new URLSearchParams({
+        limit: JSON.stringify(0),
+    });
+    const { data: categoryData } = useGetCategoriesQuery(
+        queryParams.toString()
+    );
+    const { data: subCategoryData } = useGetSubCategoriesQuery(
+        queryParams.toString()
+    );
+    const { data: brandData } = useGetBrandsQuery(queryParams.toString());
+    const { data: colorData } = useGetColorsQuery(queryParams.toString());
+    const { data: sizeData } = useGetSizesQuery(queryParams.toString());
 
     return (
         <>
