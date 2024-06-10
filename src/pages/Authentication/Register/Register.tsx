@@ -94,7 +94,7 @@ const Register = () => {
                 description="Create an account on Aladin. Sign up to access exclusive deals, manage orders, and enjoy personalized features for a seamless shopping experience."
             />
 
-            <div className="bg-white">
+            <div className="h-screen flex justify-center items-center">
                 <div className="container !w-[69%]">
                     <div className="grid lg:grid-cols-2 grid-cols-1 place-items-center">
                         <LeftAuth />

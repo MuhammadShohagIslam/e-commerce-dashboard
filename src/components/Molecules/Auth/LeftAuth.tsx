@@ -14,7 +14,7 @@ const LeftAuth: React.FC = () => {
             </div>
             <div className="mt-3 text-center">
                 <p className="text-2xl font-bold text-black/70 italic">
-                    E-Commerce
+                    Dashboard
                 </p>
             </div>
         </div>

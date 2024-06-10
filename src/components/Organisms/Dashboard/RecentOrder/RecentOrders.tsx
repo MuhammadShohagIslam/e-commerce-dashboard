@@ -25,11 +25,9 @@ const RecentOrder: React.FC<RecentOrderProps> = ({
     }
 
     if (!orders?.length) {
-        const numberOfColumns = orders?.length + 1;
-
         content = (
             <tr className={`text-gray-600 text-center`}>
-                <td className="py-11 text-xl" colSpan={numberOfColumns}>
+                <td className="py-11 text-xl" colSpan={5}>
                     <Empty />
                 </td>
             </tr>

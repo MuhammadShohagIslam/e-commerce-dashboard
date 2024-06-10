@@ -12,7 +12,6 @@
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^41.2.1",
     "@ckeditor/ckeditor5-react": "^6.2.0",
-    "@material-tailwind/react": "^2.1.9",
     "@reduxjs/toolkit": "^2.2.2",
     "antd": "^5.15.4",
     "chart.js": "^4.4.2",
