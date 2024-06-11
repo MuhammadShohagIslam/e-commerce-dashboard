@@ -20,7 +20,10 @@ const RecentProductRow: React.FC<RecentProductRowProps> = ({ product }) => {
                     )}
                 </span>
             </td>
-            <td className="px-6 py-4 font-semibold text-gray-900 ">{name}</td>
+            <td className="px-6 py-4 font-semibold text-gray-900 ">{name?.length > 16
+                                    ? name.slice(0, 16) + "..."
+                                    : name}
+            </td>
             <td className="px-6 py-4 font-semibold text-gray-900 ">${price}</td>
         </tr>
     );
