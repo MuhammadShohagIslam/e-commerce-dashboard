@@ -93,10 +93,10 @@ const UpdateProduct = ({
 
         const selectData = {
             category: data.category
-                ? JSON.stringify(data.category)
+                ? data.category
                 : JSON.stringify(updateData.category),
             brand: data.brand
-                ? JSON.stringify(data.brand)
+                ? data.brand
                 : JSON.stringify(updateData.brand),
             subCategories: data.subCategories
                 ? JSON.stringify(data.subCategories)
