@@ -46,13 +46,21 @@ const UpdateProduct = ({
     const [imageFiles, setImageFiles] = useState<UploadFile[]>([]);
     const [errorMessage, setErrorMessage] = useState<string>("");
 
+    const queryParams = new URLSearchParams({
+        limit: JSON.stringify(0),
+    });
+    
     // redux api call
     const [updateProduct, { isLoading }] = useUpdateProductMutation();
-    const { data: categoryData } = useGetCategoriesQuery("");
-    const { data: subCategoryData } = useGetSubCategoriesQuery("");
-    const { data: brandData } = useGetBrandsQuery("");
-    const { data: colorData } = useGetColorsQuery("");
-    const { data: sizeData } = useGetSizesQuery("");
+    const { data: categoryData } = useGetCategoriesQuery(
+        queryParams.toString()
+    );
+    const { data: subCategoryData } = useGetSubCategoriesQuery(
+        queryParams.toString()
+    );
+    const { data: brandData } = useGetBrandsQuery(queryParams.toString());
+    const { data: colorData } = useGetColorsQuery(queryParams.toString());
+    const { data: sizeData } = useGetSizesQuery(queryParams.toString());
     const { data: productData } = useGetProductQuery(id);
     const updateData = productData?.data;
 
